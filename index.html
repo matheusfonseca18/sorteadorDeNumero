@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Soarteador de números</h1>
+    <form action="">
+        <label for="">Você quer sortear um número entre</label>
+        <input type="number" class="inputNumero1">
+        <label for="">e</label>
+        <input type="number" class="inputNumero2">
+        <button class="sortearNumero" onclick="sortear()" >Sortear</button>
+    </form>
+    <p class="intervaloSorteado">O número sorteado está entre...</p>
+    <p id="numeroSorteado">?</p>
+    <form action="">
+        <label for="">Qual seu chute?</label>
+        <input type="number">
+        <button class="testaChute">Chutar</button>
+        <button class="reiniciar">Reiniciar</button>
+    </form>
+    <script src="app.js"></script>
+</body>
+</html>
