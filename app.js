@@ -1,10 +1,5 @@
-let numero1;
-let numero2;
-let numeroMaior;
-let numeroMenor;
 let numeroSorteado;
 let tentativas = 1;
-let palavraTentativa;
 
 function exibirTextoNaTela(tag, texto) {
   let campo = document.querySelector(tag);
@@ -14,18 +9,11 @@ function exibirTextoNaTela(tag, texto) {
 function sortear() {
   event.preventDefault();
 
-  numero1 = parseInt(document.querySelector(".inputNumero1").value);
-  numero2 = parseInt(document.querySelector(".inputNumero2").value);
+  let numero1 = parseInt(document.querySelector(".inputNumero1").value);
+  let numero2 = parseInt(document.querySelector(".inputNumero2").value);
 
-  document.querySelector(".sortearNumero").setAttribute("disabled", "disabled");
-
-  if (numero1 > numero2) {
-    numeroMaior = numero1;
-    numeroMenor = numero2;
-  } else {
-    numeroMaior = numero2;
-    numeroMenor = numero1;
-  }
+let numeroMaior = Math.max(numero1, numero2)
+let numeroMenor = Math.min(numero1, numero2)
 
   exibirTextoNaTela(
     ".intervaloSorteado",
@@ -46,6 +34,10 @@ function sortear() {
   console.log(numeroSorteado);
 
   document.querySelector(".testaChute").removeAttribute('disabled')
+
+  tentativas = 1;
+
+  document.querySelector('.chute').value = '';
 }
 
 function testarChute() {
@@ -53,11 +45,7 @@ function testarChute() {
 
   let chute = parseInt(document.querySelector(".chute").value);
 
-  if (tentativas === 1) {
-    palavraTentativa = 'tentativa'
-  } else {
-    palavraTentativa = 'tentativas'
-  }
+  let palavraTentativa = tentativas === 1 ? 'tentativa' : 'tentativas'
 
   if (chute === numeroSorteado) {
     exibirTextoNaTela(
